@@ -40,3 +40,22 @@ Sample Output 3:
 8
 
 ** Code for function **
+public class Solution {  
+
+    public static int secondLargestElement(int[] arr) {
+    	//Your code goes here
+        int largest=Integer.MIN_VALUE;
+        int slargest=Integer.MIN_VALUE;
+        for(int i=0; i<arr.length;i++){
+            if(arr[i]>largest){
+                 slargest=largest;
+                largest=arr[i];    // 2 4 6 10 7
+            }
+           else if(arr[i]>slargest&&arr[i]!=largest){// when same elemensts than issue can arraise for me doubt eg 6 6 5 5
+                slargest=arr[i];
+            }
+        }
+        return slargest;
+    }
+
+}
